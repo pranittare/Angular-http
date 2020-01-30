@@ -1,0 +1,28 @@
+<div class="container">
+    <h1>List of users</h1>
+    <div *ngFor="let user of userList">
+      <h4>{{user.firstname}}</h4>
+    </div> 
+    <pre>
+      
+      {{userList | json}}
+      
+    </pre>
+      <hr>
+      <div class="demo">
+
+        <p>This is for Demonstration Purpose only</p>
+          <p>FirstName will be Updated in JSON value</p>
+        <ul *ngFor="let user of userList; let i = index">
+            <li>{{user.firstname}} {{user.lastname}} 
+              <span class="spacer pos"><button (click)="onDelete()" mat-button color="warn">X</button> 
+                <button (click)="onUpdate(i)" mat-raised-button color="accent">Update</button>
+
+              </span>
+            </li>
+          </ul>
+          <mat-form-field class="example-full-width">
+            <input matInput type="text" placeholder="First name" [(ngModel)]="update" [value]="update">
+          </mat-form-field>
+        </div>
+  </div>

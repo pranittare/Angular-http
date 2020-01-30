@@ -1,0 +1,62 @@
+
+
+.center{
+    text-align: center;
+    font-size: larger;
+}
+.container{
+    margin: 25px;
+}
+
+input.ng-invalid.ng-touched{
+    border-left: 5px solid #a94442; /* red */
+}
+button{
+    border: 0.5px solid lightgray;
+}
+.ng-valid[required], .ng-valid.required  {
+    border-left: 5px solid #42A948; /* green */
+  }
+span{
+    padding-left: 15px;
+    font-size: medium;
+    color: #a94442 ;
+    font-style: italic;
+}
+input{
+    
+    padding-top:3px ;
+    margin-top: 5px;
+}
+.move{
+    position: absolute;
+    
+    left: 217px;
+    
+} 
+.example-full-width {
+    width: 60%;
+    
+  }
+
+.spacer{
+    position: absolute;
+    bottom: 10px;
+    /* left: 500px; */
+    left: 80%;
+}
+
+.delete{
+    border: 1px solid black;
+    
+    margin-left: 250px;
+    margin-bottom: 50px;
+}
+.matlist{
+    margin-bottom: -70px;
+    max-height: 70px;
+}
+.matitem{
+    max-height: 70px;
+
+}

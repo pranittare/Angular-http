@@ -1,0 +1,27 @@
+.container{
+    margin: 25px;
+}
+h4{
+  text-align: center;
+}
+
+pre{
+  max-width: 400px;
+  background-color: rgb(212, 207, 207);
+}
+.spacer{
+    margin-left: 50px;
+}
+.example-form {
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
+  }
+  
+  .example-full-width {
+    width: 40%;
+  }
+.pos{
+  position: absolute;
+  right: 400px;
+}

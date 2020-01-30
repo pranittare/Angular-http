@@ -1,0 +1,80 @@
+<h3 class="center">Please Fill the data</h3>
+<div class="container">
+    <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+
+        <div class="Fullname">
+            <mat-grid-list cols="2" rowHeight="10:1">
+                <mat-grid-tile>
+                    <label>First Name: </label>
+                    <mat-form-field class="example-full-width">
+                    <input matInput type="text" formControlName="firstname" placeholder="Enter your First Name">
+                </mat-form-field>
+                    <hr>
+                    <span *ngIf="registerForm.get('firstname').invalid && registerForm.get('firstname').touched">Please
+                        enter Valid First Name</span>
+                </mat-grid-tile>
+
+                <mat-grid-tile>
+
+                    <label>Last Name: </label>
+                    <mat-form-field class="example-full-width">
+
+                    <input matInput type="text" formControlName="lastname" placeholder="Enter your Last Name">
+                </mat-form-field>
+                    <span *ngIf="registerForm.get('lastname').invalid && registerForm.get('lastname').touched">Please
+                        enter Valid Last Name</span>
+
+                </mat-grid-tile>
+
+            </mat-grid-list>
+        </div>
+        <br>
+
+        <div class="email">
+            <label>Email</label>
+            <br>
+            <mat-form-field class="example-full-width">
+
+            <input matInput type="email" formControlName="email" placeholder="eg: jhon@gmail.com">
+        </mat-form-field>
+            <span class="move" *ngIf="registerForm.get('email').invalid && registerForm.get('email').touched">Please
+                enter Valid Email</span>
+        </div>
+        <br>
+        <div class="birth">
+            <label>Birth Date</label>
+            <br>
+            <mat-form-field class="example-full-width">
+                <input matInput [min]="minDate" formControlName="birth" [max]="maxDate" [matDatepicker]="picker"
+                    placeholder="eg: 15/5/2000">
+                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field>
+            <span  *ngIf="registerForm.get('birth').invalid && registerForm.get('birth').touched">Please enter Valid
+                Birth Date</span>
+
+        </div>
+        <div class="task" formArrayName="task">
+            <label>Task you are going to Perform</label>
+            
+            <!-- <div *ngFor="let taskcontrol of registerForm.get('task').controls; let i = index"> -->
+            <div *ngFor="let taskcontrol of forms().controls; let i = index">
+
+                <mat-form-field class="example-full-width">
+                    <span class="spacer">
+
+                        <button  (click)="onDeleteTask(i)" mat-button color="warn">X</button>
+                    </span>
+                    <input matInput   [formControlName]="i">
+                </mat-form-field>
+            </div>
+            <br>
+            <button mat-raised-button type="button" color="accent" (click)="onAddTask()">Add Task</button>
+            <span *ngIf="registerForm.get('task').invalid && registerForm.get('task').touched">Please enter Valid
+                task</span>
+        </div>
+        <hr>
+        <button mat-button type="submit" color="primary" [disabled]='registerForm.invalid'>Submit</button>
+    </form>
+    
+</div>

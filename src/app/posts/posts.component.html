@@ -1,0 +1,44 @@
+<form [formGroup]="books" (ngSubmit)="onSubmit()">
+
+  <mat-accordion>
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Book Title
+          </mat-panel-title>
+          <mat-panel-description>
+            Type your Title
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+    
+        <mat-form-field class="example-full-width">
+          <input matInput placeholder="Title"  name="title" formControlName="title">
+        </mat-form-field>
+        
+        <button class="button" mat-raised-button color="accent" *ngIf="!books.invalid" type="submit">Submit</button>
+      </mat-expansion-panel>
+    </mat-accordion>
+</form>
+
+
+<div *ngFor="let post of posts">
+<mat-list>
+  <mat-list-item>
+    <div class="title">
+
+      {{post.title}}
+    </div>
+    <div class="id">
+      
+      <button mat-raised-button color="warn" (click)="onDeletePost(post)">X</button>
+      <span class="spacer">{{post.id}}</span>
+       
+    </div>
+    
+    
+  </mat-list-item>
+  <mat-divider></mat-divider>
+</mat-list>
+
+
+</div>

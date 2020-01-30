@@ -24,7 +24,7 @@ export class FirebaseComponent implements OnInit {
       'firstname': new FormControl(null, [Validators.required, Validators.minLength(3)]),
       'lastname': new FormControl(null, Validators.required),
       'birth': new FormControl(null, [Validators.required]),
-      'task': new FormArray([], [Validators.required, Validators.minLength(5)])
+      'task': new FormArray([], Validators.required)
     });
   }
   
